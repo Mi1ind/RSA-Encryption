@@ -1,17 +1,18 @@
 
-publicKey = [5, 14]
+class encrypt():
+    publicKey = [5, 14]
+
+    def strToNum(self, txt):
+        num = []
+        let = 0
+
+        # for i in range(len(txt)):
+        #     num.append(my_dict[txt[i]])
+        # print(num)
+        for i in range(len(txt)):
+            num.append(ord(txt[i]))
+        print(''.join(map(str, num)))
 
 
-def strToNum(txt):
-    my_dict = {'A': 1, 'B': 2}
-    global num
-    num = []
-
-    for i in range(len(txt)):
-        num.append(my_dict[txt[i]])
-    return(num)
-
-
-print(num)
-
-strToNum('AB')
+a = encrypt()
+a.strToNum('Hi I am Milind')
