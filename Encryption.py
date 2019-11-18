@@ -1,10 +1,10 @@
 
-class encrypt():
+class Encrypt(object):
 
     def strToNum(self, txt):
         num = []
         for i in range(len(txt)):
-            num.append(ord(txt[i])-64)
+            num.append(ord(txt[i]))
             # if ord(txt[i]) < 3:
             #     num.append(ord(txt[i])-64)
             # else:
@@ -13,11 +13,11 @@ class encrypt():
         print(''.join(map(str, num)))
 
     def maths(self, asciiTxt):
-        publicKey = [7, 143]
-        num = (asciiTxt**publicKey[0]) % publicKey[1]
-        print(num)
+        publicKey = [143, 7]
+        nums = (asciiTxt**publicKey[1]) % publicKey[0]
+        print(nums)
 
 
-newInstance = encrypt()
-newInstance.strToNum('a')
-newInstance.maths(33)
+newInstance = Encrypt()
+newInstance.strToNum('aa')
+newInstance.maths(2)

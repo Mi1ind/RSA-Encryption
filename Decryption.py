@@ -1,14 +1,17 @@
+from Encryption import encrypt
+
+
 class decrypt():
 
     def maths(self, cipherTxt):
-        privateKey = [103, 143]
-        num = (cipherTxt**privateKey[0]) % privateKey[1]
+        privateKey = [143, 103]
+        num = (cipherTxt**privateKey[1]) % privateKey[0]
         print(num)
 
     def numToStr(self, asciiNum):
-        print(chr(asciiNum+64))
+        print(chr(asciiNum))
 
 
 newInstance = decrypt()
-newInstance.maths(110)
-newInstance.numToStr(33)
+newInstance.maths(2)
+newInstance.numToStr(63)
