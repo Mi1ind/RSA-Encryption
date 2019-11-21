@@ -18,8 +18,7 @@ class Encrypt(object):
         return int(a)
 
     def encMaths(self, asciiTxt):
-
-        nums = (asciiTxt**Keys.publicKey[1]) % Keys.publicKey[0]
+        nums = pow(asciiTxt, Keys.publicKey[1], Keys.publicKey[0])
         return (nums)
 
     def encAnswer(self):

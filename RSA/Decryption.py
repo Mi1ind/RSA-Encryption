@@ -5,7 +5,18 @@ ciperTxtInput = int(input())
 class Decrypt():
 
     def decMaths(self, cipherTxt):
-        num = (cipherTxt**Keys.privateKey[1]) % Keys.privateKey[0]
+        # Instead of Brute force, explore a more computationally efficient method. Modular Exponentiation
+
+        # set y = x
+        # for bit j = k - 2 downto 0
+        # begin
+        # y = y * y mod n   /* square */
+        # if e(j) == 1 then
+        #     y = y * x mod n  /* multiply */
+        # end
+        # return y
+
+        num = pow(cipherTxt, Keys.privateKey[1], Keys.privateKey[0])
         return num
 
     def numToStr(self, asciiNum):
