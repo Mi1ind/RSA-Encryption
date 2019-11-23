@@ -29,5 +29,5 @@ class Encrypt(object):
 
 newInstance = Encrypt()
 
-print(newInstance.strToNum(txtInput))
+print('\n', newInstance.strToNum(txtInput), '\n')
 print(newInstance.encAnswer())

@@ -5,16 +5,6 @@ ciperTxtInput = int(input())
 class Decrypt():
 
     def decMaths(self, cipherTxt):
-        # Instead of Brute force, explore a more computationally efficient method. Modular Exponentiation
-
-        # set y = x
-        # for bit j = k - 2 downto 0
-        # begin
-        # y = y * y mod n   /* square */
-        # if e(j) == 1 then
-        #     y = y * x mod n  /* multiply */
-        # end
-        # return y
 
         num = pow(cipherTxt, Keys.privateKey[1], Keys.privateKey[0])
         return num
@@ -41,9 +31,9 @@ class Decrypt():
 
     def decAnswer(self):
         Inst = Decrypt()
-        a = Inst.decMaths(ciperTxtInput)
-        b = Inst.numToStr(a)
-        return a, b
+        scrambledTxt = Inst.decMaths(ciperTxtInput)
+        string = Inst.numToStr(scrambledTxt)
+        return string
 
 
 newInstance = Decrypt()
@@ -51,3 +41,4 @@ newInstance = Decrypt()
 # newInstance.numToStr(75)
 
 print(newInstance.decAnswer())
+# print(newInstance.numToStr())
